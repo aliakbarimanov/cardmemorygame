@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  padding: 20px 40px;
+}
+main .title {
+  width: 100%;
+  text-align: center;
+  color: #13363a;
+}
+main .cardsBox {
+  border: 1px solid black;
+  width: 1000px;
+  margin: 20px auto 0;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 120px;
+}
+main .cardsBox .card {
+  width: 100px;
+  height: 150px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+main .cardsBox .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+main .result {
+  width: 100%;
+  margin-top: 30px;
+  text-align: center;
+  font-size: 30px;
+  color: #13363a;
+}
+main .counters {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+}
+main .counters .scoreBox {
+  width: 50%;
+  text-align: center;
+}
+main .counters .scoreBox span {
+  color: #13363a;
+  font-size: 23px;
+}
+main .counters .time {
+  width: 50%;
+  color: #13363a;
+  font-size: 23px;
+  text-align: center;
+}
