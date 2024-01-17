@@ -17,15 +17,13 @@ main .title {
   color: #13363a;
 }
 main .cardsBox {
-  border: 1px solid black;
   width: 1000px;
   margin: 20px auto 0;
-  padding: 20px 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 120px;
+  padding: 20px 270px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  row-gap: 35px;
+  column-gap: 80px;
 }
 main .cardsBox .card {
   width: 100px;
@@ -39,16 +37,19 @@ main .cardsBox .card img {
   object-fit: cover;
   border-radius: 15px;
 }
+main .cardsBox .card.reverse {
+  transform: rotateY(180deg);
+}
 main .result {
   width: 100%;
-  margin-top: 30px;
+  margin-top: 10px;
   text-align: center;
-  font-size: 30px;
+  font-size: 25px;
   color: #13363a;
 }
 main .counters {
   width: 100%;
-  margin-top: 30px;
+  margin-top: 10px;
   display: flex;
   align-items: center;
 }
