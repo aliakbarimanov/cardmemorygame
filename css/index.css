@@ -6,64 +6,52 @@
   box-sizing: border-box;
 }
 
-main {
+.hero {
   width: 100%;
   height: 100vh;
-  padding: 20px 40px;
 }
-main .title {
+.hero .title {
   width: 100%;
+  padding: 15px 0;
   text-align: center;
-  color: #13363a;
+  font-size: 28px;
+  font-weight: 600;
 }
-main .cardsBox {
+.hero .cardsBox {
   width: 1000px;
-  margin: 20px auto 0;
-  padding: 20px 270px;
+  margin: 0 auto;
+  padding: 0 270px;
   display: grid;
   grid-template-columns: auto auto auto;
-  row-gap: 35px;
-  column-gap: 80px;
+  grid-template-rows: auto auto auto;
+  row-gap: 30px;
+  column-gap: 50px;
 }
-main .cardsBox .card {
-  width: 100px;
-  height: 150px;
-  border-radius: 15px;
+.hero .cardsBox .card {
+  width: 120px;
+  height: 180px;
+  position: relative;
   cursor: pointer;
 }
-main .cardsBox .card img {
+.hero .cardsBox .card .cardImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
   border-radius: 15px;
+  transition: all 1s ease;
 }
-main .cardsBox .card.reverse {
-  transform: rotateY(180deg);
+.hero .cardsBox .card .cardImage.front {
+  transform: rotateY(90deg);
 }
-main .result {
-  width: 100%;
-  margin-top: 10px;
-  text-align: center;
-  font-size: 25px;
-  color: #13363a;
+.hero .cardsBox .card .cardImage.front.reverse {
+  transform: rotateY(0deg);
 }
-main .counters {
-  width: 100%;
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
+.hero .cardsBox .card .cardImage.back {
+  transform: rotateY(0deg);
 }
-main .counters .scoreBox {
-  width: 50%;
-  text-align: center;
-}
-main .counters .scoreBox span {
-  color: #13363a;
-  font-size: 23px;
-}
-main .counters .time {
-  width: 50%;
-  color: #13363a;
-  font-size: 23px;
-  text-align: center;
+.hero .cardsBox .card .cardImage.back.reverse {
+  transform: rotateY(90deg);
 }
