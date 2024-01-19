@@ -1,9 +1,35 @@
+const data = [
+    {
+        id: 1,
+        image: "./images/1.png",
+        flipped: false,
+    },
+    {
+        id: 2,
+        image: "./images/2.png",
+        flipped: false,
+    },
+    {
+        id: 3,
+        image: "./images/3.png",
+        flipped: false,
+    },
+    {
+        id: 4,
+        image: "./images/4.png",
+        flipped: false,
+    },
+    {
+        id: 5,
+        image: "./images/5.png",
+        flipped: false,
+    },
+];
+
+
 const cardsBox = document.querySelector(".cardsBox");
 
-let numArray = [];
-
 for (let i = 1; i <= 9; i++) {
-
     const card = document.createElement("div");
     card.classList.add("card");
 
@@ -14,28 +40,28 @@ for (let i = 1; i <= 9; i++) {
     const frontImg = document.createElement("img");
     frontImg.classList.add("front", "cardImage");
 
-    // random number between 1 - 5;
-    const randomInt = Math.floor(Math.random() * 4) + 1;
+    // const randomNumber = (Math.floor(Math.random()) * 4) + 1;
 
-    if (!(numArray.includes(randomInt))) {
-        frontImg.src = `./images/${randomInt}.png`;
-        numArray.push(randomInt);
+    for (let j = 1; j < 6; j++) {
+        frontImg.src = `./images/${j}.png`;
+        card.appendChild(backImg);
+        card.appendChild(frontImg);
+        cardsBox.appendChild(card);
     }
 
-    card.appendChild(backImg);
-    card.appendChild(frontImg);
-    cardsBox.appendChild(card);
 }
 
 
-const card = document.querySelector(".card");
-const cardImage = document.querySelectorAll(".cardImage");
 
+const cardList = document.querySelectorAll(".card");
+const flipSound = new Audio("../sounds/flip.m4a");
 
+for (let i = 0; i < cardList.length; i++) {
+    cardList[i].addEventListener("click", () => {
 
-card.addEventListener("click", () => {
-
-    for (val of cardImage) {
-        val.classList.toggle("reverse");
-    }
-});
+        if (!(cardList[i].classList.contains("reverse"))) {
+            cardList[i].classList.add("reverse");
+            flipSound.play();
+        }
+    });
+}

@@ -25,6 +25,7 @@
             height: 180px;
             position: relative;
             cursor: pointer;
+            user-select: none;
 
             .cardImage {
                 width: 100%;
@@ -37,19 +38,23 @@
 
                 &.front {
                     border: 1px solid #000;
-                    transition: all 1s ease-out .4s;
+                    transition: all .35s ease .35s;
                     transform: rotateY(90deg);
-
-                    &.reverse {
-                        transform: rotateY(0deg);
-                    }
                 }
 
                 &.back {
-                    backface-visibility: hidden;
-                    transition: all 1s ease-out .4s;
+                    // backface-visibility: hidden;
+                    transition: all .35s ease;
+                }
+            }
 
-                    &.reverse {
+            &.reverse {
+                .cardImage {
+                    &.front {
+                        transform: rotateY(0deg);
+                    }
+
+                    &.back {
                         transform: rotateY(90deg);
                     }
                 }
