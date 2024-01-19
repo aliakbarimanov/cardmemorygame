@@ -1,5 +1,6 @@
 const cardsBox = document.querySelector(".cardsBox");
 
+let numArray = [];
 
 for (let i = 1; i <= 9; i++) {
 
@@ -12,7 +13,14 @@ for (let i = 1; i <= 9; i++) {
 
     const frontImg = document.createElement("img");
     frontImg.classList.add("front", "cardImage");
-    frontImg.src = "./images/bg.jpg";
+
+    // random number between 1 - 5;
+    const randomInt = Math.floor(Math.random() * 4) + 1;
+
+    if (!(numArray.includes(randomInt))) {
+        frontImg.src = `./images/${randomInt}.png`;
+        numArray.push(randomInt);
+    }
 
     card.appendChild(backImg);
     card.appendChild(frontImg);
@@ -31,8 +39,3 @@ card.addEventListener("click", () => {
         val.classList.toggle("reverse");
     }
 });
-
-// random number between 1 - 5;
-const randomInt = Math.floor(Math.random() * 5) + 1;
-
-console.log(randomInt);

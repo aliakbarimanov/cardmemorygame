@@ -41,16 +41,18 @@
   top: 0;
   left: 0;
   border-radius: 15px;
-  transition: all 1s ease;
 }
 .hero .cardsBox .card .cardImage.front {
+  border: 1px solid #000;
+  transition: all 1s ease-out 0.4s;
   transform: rotateY(90deg);
 }
 .hero .cardsBox .card .cardImage.front.reverse {
   transform: rotateY(0deg);
 }
 .hero .cardsBox .card .cardImage.back {
-  transform: rotateY(0deg);
+  backface-visibility: hidden;
+  transition: all 1s ease-out 0.4s;
 }
 .hero .cardsBox .card .cardImage.back.reverse {
   transform: rotateY(90deg);
