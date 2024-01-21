@@ -29,7 +29,7 @@
 }
 .hero .cardsBox .card {
   width: 120px;
-  height: 180px;
+  height: 190px;
   position: relative;
   cursor: pointer;
   user-select: none;
@@ -44,11 +44,11 @@
   border-radius: 15px;
 }
 .hero .cardsBox .card .cardImage.front {
-  border: 1px solid #000;
   transition: all 0.35s ease 0.35s;
   transform: rotateY(90deg);
 }
 .hero .cardsBox .card .cardImage.back {
+  backface-visibility: hidden;
   transition: all 0.35s ease;
 }
 .hero .cardsBox .card.reverse .cardImage.front {

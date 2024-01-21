@@ -22,7 +22,7 @@
 
         .card {
             width: 120px;
-            height: 180px;
+            height: 190px;
             position: relative;
             cursor: pointer;
             user-select: none;
@@ -37,13 +37,12 @@
                 border-radius: 15px;
 
                 &.front {
-                    border: 1px solid #000;
                     transition: all .35s ease .35s;
                     transform: rotateY(90deg);
                 }
 
                 &.back {
-                    // backface-visibility: hidden;
+                    backface-visibility: hidden;
                     transition: all .35s ease;
                 }
             }
